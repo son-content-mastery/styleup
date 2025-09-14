@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+
+{% block title %}Add New Item{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+        <div class="card shadow-sm">
+            <div class="card-body p-5">
+                <h1 class="card-title text-center mb-4">Add a New Clothing Item</h1>
+                <form method="POST" enctype="multipart/form-data">
+                    <div class="mb-4">
+                        <label for="file" class="form-label">1. Upload a picture</label>
+                        <input class="form-control" type="file" id="file" name="file" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="category" class="form-label">2. Select a Category</label>
+                        <select class="form-select" id="category" name="category" required>
+                            <option value="" disabled selected>-- Choose Category --</option>
+                            <option value="top">Top (Shirt, T-shirt, Blouse)</option>
+                            <option value="bottom">Bottom (Pants, Skirt, Shorts)</option>
+                            <option value="dress">Dress / Jumpsuit</option>
+                            <option value="outerwear">Outerwear (Jacket, Coat)</option>
+                            <option value="shoes">Shoes</option>
+                            <option value="accessory">Accessory (Bag, Scarf)</option>
+                        </select>
+                    </div>
+                     <div class="mb-4">
+                        <label for="style" class="form-label">3. Select a Style</label>
+                        <select class="form-select" id="style" name="style" required>
+                            <option value="" disabled selected>-- Choose Style --</option>
+                            <option value="casual">Casual</option>
+                            <option value="formal">Formal</option>
+                            <option value="sport">Sport</option>
+                            <option value="business">Business</option>
+                        </select>
+                    </div>
+                    <div class="d-grid">
+                         <button type="submit" class="btn btn-primary btn-lg">Add to Closet</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
